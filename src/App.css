@@ -1,4 +1,94 @@
 .container {
-  max-width: 1000px;
-  margin: 20px auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space between sections */
+}
+
+.map-weather-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  height: 480px;
+  /* min-height: 400px; */
+}
+
+.map-weather-container > * {
+  flex: 0 0 50%;   /* fixed 50% width */
+  max-width: 50%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.forecast-chart-container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px; /* or any max width you want */
+  margin: 0 auto; /* center on large screens */
+  box-sizing: border-box;
+}
+
+.forecast-wrapper,
+.chart-wrapper {
+  flex: 1 1 45%;
+  max-width: 100%;  /* important: do not exceed parent's width */
+  min-width: 300px; /* prevent shrinking too small */
+  box-sizing: border-box;
+  overflow: hidden; /* prevent internal overflow */
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* On small screens stack vertically */
+@media (max-width: 768px) {
+  .forecast-wrapper,
+  .chart-wrapper {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+}
+
+.chart-wrapper > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;  /* fixed height needed for map rendering */
+  position: relative; /* if map library requires */
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .map-weather-container {
+    flex-wrap: wrap; /* allow stacking */
+    /* flex-direction: column; */
+    height: auto; /* let height grow */
+  }
+  
+  .map-weather-container > * {
+    flex: 1 1 100%;
+    max-width: 80%;
+    height: auto; /* auto height when stacked */
+  }
+  
+  .map-wrapper {
+    height: 480px; /* fixed height for map on small */
+    margin-top: 25px;
+  }
 }

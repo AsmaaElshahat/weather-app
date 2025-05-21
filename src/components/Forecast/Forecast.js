@@ -35,11 +35,13 @@ const Forecast = ({ data }) => {
                                             className="icon-small"
                                             src={`https://openweathermap.org/img/wn/${item.icon[0]}@2x.png`}
                                         />
-                                        <label className="fore-day">{item.day}</label>
-                                        <label className="fore-date">{date}</label>
+                                        <div className="fore-day-date">
+                                            <label className="fore-day">{item.day}</label>
+                                            <label className="fore-date">{date}</label>
+                                        </div>
                                         <label className="fore-description">{item.description[0]}</label>
                                         <label className="fore-min-max">
-                                            ↑{Math.round(item.minMax.max)}°C / ↓{Math.round(item.minMax.min)}°C
+                                            {Math.round(item.minMax.max)} / {Math.round(item.minMax.min)} °C
                                         </label>
                                     </div>
                                 </AccordionItemButton>

@@ -1,46 +1,47 @@
 {
+    "city": "Aixirivall, AD",
     "coord": {
-        "lon": 7.367,
-        "lat": 45.133
+        "lon": 1.5021,
+        "lat": 42.4624
     },
     "weather": [
         {
-            "id": 803,
+            "id": 804,
             "main": "Clouds",
-            "description": "broken clouds",
+            "description": "overcast clouds",
             "icon": "04d"
         }
     ],
     "base": "stations",
     "main": {
-        "temp": 15.68,
-        "feels_like": 15.13,
-        "temp_min": 14.96,
-        "temp_max": 16.74,
-        "pressure": 1014,
-        "humidity": 70,
-        "sea_level": 1014,
-        "grnd_level": 904
+        "temp": 12.63,
+        "feels_like": 12.25,
+        "temp_min": 8.41,
+        "temp_max": 12.63,
+        "pressure": 1019,
+        "humidity": 88,
+        "sea_level": 1019,
+        "grnd_level": 826
     },
     "visibility": 10000,
     "wind": {
-        "speed": 2.4,
-        "deg": 116,
-        "gust": 1.56
+        "speed": 2.59,
+        "deg": 340,
+        "gust": 3.53
     },
     "clouds": {
-        "all": 62
+        "all": 95
     },
-    "dt": 1747136388,
+    "dt": 1747738184,
     "sys": {
         "type": 2,
-        "id": 2008404,
-        "country": "IT",
-        "sunrise": 1747109007,
-        "sunset": 1747162226
+        "id": 2099214,
+        "country": "AD",
+        "sunrise": 1747715260,
+        "sunset": 1747768420
     },
     "timezone": 7200,
-    "id": 3165523,
-    "name": "Province of Turin",
+    "id": 3039163,
+    "name": "Sant Julià de Lòria",
     "cod": 200
 }

@@ -9,7 +9,7 @@ const getAverage = (arr) => {
 export const processForecastData = (data) => {
     const processedData = {}
     for (const item of data) {
-        const { day, date } = getDateAndDay(item.dt)
+        const { day, date, time } = getDateAndDay(item.dt)
         const tempMin = Number(item.main.temp_min);
         const tempMax = Number(item.main.temp_max);
         if (date in processedData){
@@ -21,6 +21,7 @@ export const processForecastData = (data) => {
             processedData[date].humidity.push(item.main.humidity);
             processedData[date].minMax.min = Math.min(processedData[date].minMax.min, tempMin);
             processedData[date].minMax.max = Math.max(processedData[date].minMax.max, tempMax);
+            processedData[date].timeTemp.push({ time, temp: item.main.temp });
         } else {
             processedData[date] = {
                 day: day,
@@ -33,7 +34,8 @@ export const processForecastData = (data) => {
                 minMax: {
                     min: tempMin,
                     max: tempMax
-                }
+                },
+                timeTemp: [{ time, temp: item.main.temp }]
             };
         }
     }
@@ -54,9 +56,8 @@ export const processForecastData = (data) => {
     let year = date.getFullYear();
 
     let currentDate = `${year}-${month}-${day}`;
-    console.log(processedData)
-    console.log(currentDate)
     processedData[currentDate].day = 'Today'
+
     return processedData;
 };
 
